@@ -26,29 +26,27 @@ int main(void)
         totalCoins++;
         newN -= 25;
     }
-   
-     //if the total is more than 10, add 1 to total coins due to the dime that would take its spot, and subtract 10 from the newN
+//if the total is more than 10, add 1 to total coins due to the dime that would take its spot, and subtract 10 from the newN
     while (newN >= 10)
     {
         totalCoins ++;
         newN -= 10;
     }
-    
-      //if the total is more than 5, add 1 to total coins due to the nickel that would take its spot, and subtract 5 from the newN
-     while (newN >= 5)
+//if the total is more than 5, add 1 to total coins due to the nickel that would take its spot, and subtract 5 from the newN
+    while (newN >= 5)
     {
         totalCoins ++;
         newN -= 5;
     }
-      //if the total is more than 1, add 1 to total coins due to the penny that would take its spot, and subtract 1 from the newN
-     while (newN >= 1)
+//if the total is more than 1, add 1 to total coins due to the penny that would take its spot, and subtract 1 from the newN
+    while (newN >= 1)
     {
         totalCoins ++;
         newN -= 1;
     }
-    //print the integer of minimum total coins that can be found
+//print the integer of minimum total coins that can be found
     printf("%i\n", totalCoins);
-    }
+}
 
 //create a function that prompts the user for a float until n is more than 0
 float get_change(void)
