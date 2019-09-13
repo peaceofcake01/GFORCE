@@ -16,8 +16,8 @@ int main(void)
     }
     while (n < 0);
     //set up variables that will make future steps easier by multiplying the float and making it into an integer
-    float newN = n * 100;
-    newN = roundf(newN);
+    float oldN = n * 100;
+    int newN = (int) roundf(oldN);
     //initialize total coins to 0
     int totalCoins = 0;
     //if the total is more than 25, add 1 to total coins due to the quarter that would take its spot, and subtract 25 from the newN
