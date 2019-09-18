@@ -19,7 +19,7 @@ for (int i = 0; i < strlen(s); i++)
         letters++;
     }
 }
-printf("Letters: %i\n", letters);
+//printf("Letters: %i\n", letters);
 
 
     int words = 0;
@@ -41,7 +41,7 @@ for (int i = 0; i < strlen(s); i++)
 
 
 }
-printf("Words: %i\n", words);
+//printf("Words: %i\n", words);
 
 
 
@@ -56,7 +56,7 @@ for (int i = 0; i < strlen(s); i++)
 
 }
 
-printf("Sentences: %i\n", sentences);
+//printf("Sentences: %i\n", sentences);
 
 float L = 100 * letters/words;
 float S = 100 * sentences/words;
