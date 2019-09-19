@@ -82,7 +82,7 @@ int finalgrade= round(initialgrade);
 
     else if (finalgrade<1)
     {
-        printf("Before Grade 1...\n");
+        printf("Before Grade 1\n");
     }
     else
     {
