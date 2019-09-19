@@ -19,7 +19,7 @@ for (int i = 0; i < strlen(s); i++)
         letters++;
     }
 }
-printf("Letters: %f\n", letters);
+//printf("Letters: %f\n", letters);
 
 
     float words = 0;
@@ -41,7 +41,7 @@ for (int i = 0; i < strlen(s); i++)
 
 
 }
-printf("Words: %f\n", words);
+//printf("Words: %f\n", words);
 
 
 
@@ -56,23 +56,23 @@ for (int i = 0; i < strlen(s); i++)
 
 }
 
-printf("Sentences: %f\n", sentences);
+//printf("Sentences: %f\n", sentences);
 
 float L = 100.0 * letters/words;
 float S = 100.0 * sentences/words;
 
-printf("L: %f\n", L);
-printf("S: %f\n", S);
+//printf("L: %f\n", L);
+//printf("S: %f\n", S);
 
 
 //Find initial grade level estimation
    float initialgrade = 0.0588 * L - 0.296 * S - 15.8;
 // Round the grade level
-printf("initialgrade: %f\n", initialgrade);
+//printf("initialgrade: %f\n", initialgrade);
 
 int finalgrade= round(initialgrade);
 
-printf("finalgrade: %i\n", finalgrade);
+//printf("finalgrade: %i\n", finalgrade);
 //If else statement saying that if grade ends up being larger than 16 then print grade 16+, if grade is less than 1 print before grade 1
 
     if (finalgrade>16)
