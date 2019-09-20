@@ -21,34 +21,31 @@
             printf("Usage: ./caesar key\n");
         }
 
-
-
-
     }
 
    int k = atoi(argv[1]);
 
 
-
     string s = get_string("plaintext: ");
-    printf("ciphertext:  ");
+    printf("ciphertext: ");
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         if (isalpha(s[i]))
         {
             if(isupper(s[i]))
             {
-                char c = s[i] + (k % 26);
+                int c = s[i] + (k % 26);
                 if(c > 90){
                  c = c % 90 + 64;
                 }
                 printf("%c", c);
             }
-             else
+             else if (islower(s[i]))
             {
-                char c = (s[i] + (k % 26));
-                if(c>122){
-                     c = c % 122 + 96;
+                int c = s[i] + (k % 26);
+                // printf("first %i\n", c);
+                if(c > 122){
+                 c = c % 122 + 96;
                 }
                 printf("%c", c);
             }
