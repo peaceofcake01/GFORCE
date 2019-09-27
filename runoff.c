@@ -144,7 +144,7 @@ void tabulate(void)
     for (int i = 0; i < voter_count; i++)
     {
 
-        for (int j=0; j < candidate_count; i++)
+        for (int j=0; j < candidate_count; j++)
         {
             int cand_ind = preferences[i][j];
             if (candidates[cand_ind].eliminated == false)
@@ -186,7 +186,7 @@ int minvotes = 100;
         minvotes = candidates[i].votes;
     }
 }
-    return 0;
+    return minvotes;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
