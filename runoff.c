@@ -150,10 +150,11 @@ void tabulate(void)
             if (candidates[cand_ind].eliminated == false)
             {
                 candidates[cand_ind].votes++;
+                break;
             }
         }
 
-}
+    }
 }
 
 // Print the winner of the election, if there is one
