@@ -23,7 +23,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             y = (image[i][j].rgbtGreen);
             z = (image[i][j].rgbtBlue);
             GrayS = (x + y + z) / 3;
-            offGrays= long roundf(GrayS);
+            offGrays = roundf(GrayS);
             image[i][j].rgbtRed = offGrays;
             image[i][j].rgbtGreen = offGrays;
             image[i][j].rgbtBlue = offGrays;
