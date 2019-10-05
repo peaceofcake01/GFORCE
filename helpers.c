@@ -13,7 +13,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     long x = 0;
     long y = 0;
     long z = 0;
-    long offGrays
+    long offGrays;
 
     for (int i = 0; i < height; i++)
     {
