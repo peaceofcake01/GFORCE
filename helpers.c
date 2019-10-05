@@ -9,10 +9,11 @@ void swap(int *a, int *x);
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    int GrayS = 0;
-    int x = 0;
-    int y = 0;
-    int z = 0;
+    long GrayS = 0;
+    long x = 0;
+    long y = 0;
+    long z = 0;
+    long offGrays
 
     for (int i = 0; i < height; i++)
     {
@@ -22,9 +23,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             y = (image[i][j].rgbtGreen);
             z = (image[i][j].rgbtBlue);
             GrayS = (x + y + z) / 3;
-            image[i][j].rgbtRed = round(GrayS);
-            image[i][j].rgbtGreen = round(GrayS);
-            image[i][j].rgbtBlue = round(GrayS);
+            offGrays= long roundf(GrayS);
+            image[i][j].rgbtRed = offGrays;
+            image[i][j].rgbtGreen = offGrays;
+            image[i][j].rgbtBlue = offGrays;
         }
     }
 
