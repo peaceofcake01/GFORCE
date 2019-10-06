@@ -12,7 +12,7 @@ if (argc != 2)
     FILE *f = fopen(argv[1], "r");
     FILE *img;
 
-    int counter = 0;
+    int counter = -1;
 
     if(f == NULL)
     {
@@ -28,7 +28,7 @@ if (argc != 2)
         if (buffer[0] == 0xff  && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
 
-            if(counter != 0)
+            if(counter != -1)
             {
                 fclose(img);
             }
@@ -36,7 +36,7 @@ if (argc != 2)
             sprintf(x, "%03i.jpg", counter);
             img = fopen(x, "w+");
         }
-        if (counter!=0)
+        if (counter!=-1)
         {
             fwrite(buffer, 1, 512, img);
         }
