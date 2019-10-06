@@ -159,24 +159,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                }
 
-            int offsum_red = (int)roundf(sum_red);
-            int offsum_green = (int)roundf(sum_green);
-            int offsum_blue = (int)roundf(sum_blue);
 
 
-            float avg_red = (offsum_red)/counter;
-            float avg_green = (offsum_green)/counter;
-            float avg_blue = (offsum_blue)/counter;
+
+            float avg_red= sum_red / counter;
+            float avg_green = sum_green / counter;
+            float avg_blue = sum_blue / counter;
+
+            printf("%f: avg=red\n", avg_red);
+
 
             int offavg_r = (int) roundf(avg_red);
             int offavg_g = (int) roundf(avg_green);
             int offavg_b = (int) roundf(avg_blue);
 
+             printf("%i: offavg=red\n", offavg_r);
 
 
-            temp[i][j].rgbtRed = round(offavg_r);
-            temp[i][j].rgbtGreen = round(offavg_g);
-            temp[i][j].rgbtBlue = round(offavg_b);
+
+            temp[i][j].rgbtRed = offavg_r;
+            temp[i][j].rgbtGreen = offavg_g;
+            temp[i][j].rgbtBlue = offavg_b;
 
           }
 
@@ -187,7 +190,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j]= temp[i][j];
+            image[i][j] = temp[i][j];
         }
     }
     }
