@@ -3,6 +3,9 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#define MIN(a,b) (((a)<(b))?(a):(b))
+#define MAX(a,b) (((a)>(b))?(a):(b))
+
 
 void swap(int *a, int *x);
 
@@ -98,19 +101,16 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < width/2; j++)
         {
             x = image[i][j].rgbtRed;
             y = image[i][j].rgbtGreen;
             z = image[i][j].rgbtBlue;
 
-            a = image[i][width - 1].rgbtRed;
-            b = image[i][width - 1].rgbtGreen;
-            c = image[i][width - 1].rgbtBlue;
+            a = image[i][width - j - 1].rgbtRed;
+            b = image[i][width - j - 1].rgbtGreen;
+            c = image[i][width - j - 1].rgbtBlue;
 
-            swap(&x, &a);
-            swap(&y, &b);
-            swap(&z, &c);
 
             image[i][width - j - 1].rgbtRed = x;
             image[i][width - j - 1].rgbtGreen = y;
@@ -140,71 +140,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            for (k = MAX(0, k-1); k < MIN(i + 2, height); k++)
+               {
+                max numbe
 
-            if(i==0 && j == 0)
-            {
-            offx=(image[i][j+1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j+1].rgbtRed)/3;
-            offy = (image[i][j+1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen)/3;
-            offz = (image[i][j+1].rgbtBlue + image [i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue)/3;
-            }
+                for (m = MAX (0, m-1); m < MIN(j+2, width); j++)
+                    {
 
-            else if (i==0 && j == width - 1)
-            {
-            offx = (image[i][j-1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j-1].rgbtRed)/3;
-            offy = (image[i][j-1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j-1].rgbtGreen)/3;
-            offz = (image[i][j-1].rgbtBlue + image [i-1][j].rgbtBlue + image[i-1][j-1].rgbtBlue)/3;
-            }
+                    }
 
-            else if (i==height - 1 && j == 0)
-            {
-            offx = (image[i+1][j+1].rgbtRed + image [i+1][j].rgbtRed + image[i][j+1].rgbtRed)/3;
-            offy = (image[i+1][j+1].rgbtGreen + image [i+1][j].rgbtGreen + image[i][j+1].rgbtGreen)/3;
-            offz = (image[i+1][j+1].rgbtBlue + image [i+1][j].rgbtBlue + image[i][j+1].rgbtBlue)/3;
-            }
-
-            else if (i==height - 1 && j == width - 1)
-            {
-            offx = (image[i-1][j-1].rgbtRed + image [i+1][j].rgbtRed + image[i][j - 1].rgbtRed)/3;
-            offy = (image[i-1][j-1].rgbtGreen + image [i+1][j].rgbtGreen + image[i][j - 1].rgbtGreen)/3;
-            offz = (image[i-1][j-1].rgbtBlue + image [i+1][j].rgbtBlue + image[i][j - 1].rgbtBlue)/3;
-            }
-
-
-            else if (i==0 && j != 0)
-            {
-
-
-            }
-            else if(i != 0 && j == width - 1)
-            {
-
-            }
-            else if (i==height - 1 && j != 0)
-            {
-
-            }
-            else if (i!=height - 1 && j == width - 1)
-            {
-
-            }
-            else
-            {
-            offx = (image[i-1][j-1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j+1].rgbtRed
-            + image [i][j-1].rgbtRed+ image[i][j].rgbtRed + image [i][j+1].rgbtRed
-            + image[i+1][j-1].rgbtRed + image [i+1][j].rgbtRed + image [i+1][j+1].rgbtRed)/9;
-
-            offy = (image[i-1][j-1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen
-            + image [i][j-1].rgbtGreen + image[i][j].rgbtGreen + image [i][j+1].rgbtGreen +
-            image[i+1][j-1].rgbtGreen + image [i+1][j].rgbtGreen + image [i+1][j+1].rgbtGreen)/9;
-
-            offz = (image[i-1][j-1].rgbtBlue + image [i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue
-            + image [i][j-1].rgbtBlue + image[i][j].rgbtBlue + image [i][j+1].rgbtBlue
-            + image[i+1][j-1].rgbtBlue + image [i+1][j].rgbtBlue + image [i+1][j+1].rgbtBlue)/9;
-            }
-
-            image[i][j].rgbtRed = offx;
-            image[i][j].rgbtGreen = offy;
-            image[i][j].rgbtBlue = offz;
         }
 
     }
@@ -212,9 +156,69 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 
-void swap(int *a, int *b)
-{
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
+
+
+ //if(i == 0 && j == 0)
+//             {
+//             offx=(image[i][j+1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j+1].rgbtRed)/3;
+//             offy = (image[i][j+1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen)/3;
+//             offz = (image[i][j+1].rgbtBlue + image [i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue)/3;
+//             }
+
+//             else if (i==0 && j == width - 1)
+//             {
+//             offx = (image[i][j-1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j-1].rgbtRed)/3;
+//             offy = (image[i][j-1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j-1].rgbtGreen)/3;
+//             offz = (image[i][j-1].rgbtBlue + image [i-1][j].rgbtBlue + image[i-1][j-1].rgbtBlue)/3;
+//             }
+
+//             else if (i==height - 1 && j == 0)
+//             {
+//             offx = (image[i+1][j+1].rgbtRed + image [i+1][j].rgbtRed + image[i][j+1].rgbtRed)/3;
+//             offy = (image[i+1][j+1].rgbtGreen + image [i+1][j].rgbtGreen + image[i][j+1].rgbtGreen)/3;
+//             offz = (image[i+1][j+1].rgbtBlue + image [i+1][j].rgbtBlue + image[i][j+1].rgbtBlue)/3;
+//             }
+
+//             else if (i==height - 1 && j == width - 1)
+//             {
+//             offx = (image[i-1][j-1].rgbtRed + image [i+1][j].rgbtRed + image[i][j - 1].rgbtRed)/3;
+//             offy = (image[i-1][j-1].rgbtGreen + image [i+1][j].rgbtGreen + image[i][j - 1].rgbtGreen)/3;
+//             offz = (image[i-1][j-1].rgbtBlue + image [i+1][j].rgbtBlue + image[i][j - 1].rgbtBlue)/3;
+//             }
+
+
+//             else if (i==0 && j != 0)
+//             {
+
+
+//             }
+//             else if(i != 0 && j == width - 1)
+//             {
+
+//             }
+//             else if (i==height - 1 && j != 0)
+//             {
+
+//             }
+//             else if (i!=height - 1 && j == width - 1)
+//             {
+
+//             }
+//             else
+//             {
+//             offx = (image[i-1][j-1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j+1].rgbtRed
+//             + image [i][j-1].rgbtRed+ image[i][j].rgbtRed + image [i][j+1].rgbtRed
+//             + image[i+1][j-1].rgbtRed + image [i+1][j].rgbtRed + image [i+1][j+1].rgbtRed)/9;
+
+//             offy = (image[i-1][j-1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen
+//             + image [i][j-1].rgbtGreen + image[i][j].rgbtGreen + image [i][j+1].rgbtGreen +
+//             image[i+1][j-1].rgbtGreen + image [i+1][j].rgbtGreen + image [i+1][j+1].rgbtGreen)/9;
+
+//             offz = (image[i-1][j-1].rgbtBlue + image [i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue
+//             + image [i][j-1].rgbtBlue + image[i][j].rgbtBlue + image [i][j+1].rgbtBlue
+//             + image[i+1][j-1].rgbtBlue + image [i+1][j].rgbtBlue + image [i+1][j+1].rgbtBlue)/9;
+//             }
+
+//             image[i][j].rgbtRed = offx;
+//             image[i][j].rgbtGreen = offy;
+//             image[i][j].rgbtBlue = offz;
