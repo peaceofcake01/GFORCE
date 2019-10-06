@@ -168,9 +168,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-            temp[i][j].rgbtRed = round(offavg_r);
-            temp[i][j].rgbtGreen = round(offavg_g);
-            temp[i][j].rgbtBlue = round(offavg_b);
+            temp[i][j].rgbtRed = offavg_r;
+            temp[i][j].rgbtGreen = offavg_g;
+            temp[i][j].rgbtBlue = offavg_b;
 
           }
 
