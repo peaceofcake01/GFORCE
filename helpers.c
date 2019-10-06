@@ -130,6 +130,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     {
+    RGBTRIPLE temp[height][width];
     int x = 0;
     int y = 0;
     int z = 0;
@@ -140,19 +141,50 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            for (k = MAX(0, k-1); k < MIN(i + 2, height); k++)
+
+            int sum_red = 0;
+            int sum_green = 0;
+            int sum_blue = 0;
+            int counter = 0;
+            for (int k = MAX(0, i-1); k < MIN(i + 2, height); k++)
                {
-                max numbe
 
-                for (m = MAX (0, m-1); m < MIN(j+2, width); j++)
+
+                for (int m = MAX(0, j-1); m < MIN(j+2, width); m++)
                     {
-
+                        sum_red += image[k][m].rgbtRed;
+                        sum_green += image[k][m].rgbtGreen;
+                        sum_blue += image[k][m].rgbtBlue;
+                        counter++;
                     }
+               }
+            float avg_red = (sum_red)/counter;
+            float avg_green = (sum_green)/counter;
+            float avg_blue =(sum_blue)/counter;
 
-        }
+            int offavg_r = (int) roundf(avg_red);
+            int offavg_g = (int) roundf(avg_green);
+            int offavg_b = (int) roundf(avg_blue);
+
+
+
+            temp[i][j].rgbtRed = round(offavg_r);
+            temp[i][j].rgbtGreen = round(offavg_g);
+            temp[i][j].rgbtBlue = round(offavg_b);
+
+          }
+
 
     }
-}
+
+   for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j]= temp[i][j];
+        }
+    }
+    }
 }
 
 
