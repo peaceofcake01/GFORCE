@@ -41,10 +41,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
- {
+{
     float x = 0;
     float y = 0;
-    float z= 0;
+    float z = 0;
     float sepiaRed = 0;
     float sepiaGreen = 0;
     float sepiaBlue = 0;
@@ -97,11 +97,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     int b = 0;
     int c = 0;
 
-    RGBTRIPLE*s = malloc (height*sizeof(image[height])[width]);
+    RGBTRIPLE *s = malloc(height * sizeof(image[height])[width]);
 
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width/2; j++)
+        for (int j = 0; j < width / 2; j++)
         {
             x = image[i][j].rgbtRed;
             y = image[i][j].rgbtGreen;
@@ -130,76 +130,69 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     {
-    RGBTRIPLE temp[height][width];
-    int x = 0;
-    int y = 0;
-    int z = 0;
-    int offx = 0;
-    int offy = 0;
-    int offz = 0;
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
+        RGBTRIPLE temp[height][width];
+        int x = 0;
+        int y = 0;
+        int z = 0;
+        int offx = 0;
+        int offy = 0;
+        int offz = 0;
+        for (int i = 0; i < height; i++)
         {
+            for (int j = 0; j < width; j++)
+            {
+                float sum_red = 0;
+                float sum_green = 0;
+                float sum_blue = 0;
+                int counter = 0;
+                for (int k = MAX(0, i - 1); k < MIN(i + 2, height); k++)
+                {
 
-            float sum_red = 0;
-            float sum_green = 0;
-            float sum_blue = 0;
-            int counter = 0;
-            for (int k = MAX(0, i-1); k < MIN(i + 2, height); k++)
-               {
-
-
-                for (int m = MAX(0, j-1); m < MIN(j+2, width); m++)
+                    for (int m = MAX(0, j - 1); m < MIN(j + 2, width); m++)
                     {
                         sum_red += image[k][m].rgbtRed;
                         sum_green += image[k][m].rgbtGreen;
                         sum_blue += image[k][m].rgbtBlue;
                         counter++;
                     }
-               }
+                }
+
+                float avg_red = sum_red / counter;
+                float avg_green = sum_green / counter;
+                float avg_blue = sum_blue / counter;
+
+                // printf("%f: avg=red\n", avg_red);
 
 
+                int offavg_r = (int) roundf(avg_red);
+                int offavg_g = (int) roundf(avg_green);
+                int offavg_b = (int) roundf(avg_blue);
+
+                // printf("%i: offavg=red\n", offavg_r);
+
+                temp[i][j].rgbtRed = offavg_r;
+                temp[i][j].rgbtGreen = offavg_g;
+                temp[i][j].rgbtBlue = offavg_b;
+
+            }
 
 
-            float avg_red= sum_red / counter;
-            float avg_green = sum_green / counter;
-            float avg_blue = sum_blue / counter;
-
-            printf("%f: avg=red\n", avg_red);
-
-
-            int offavg_r = (int) roundf(avg_red);
-            int offavg_g = (int) roundf(avg_green);
-            int offavg_b = (int) roundf(avg_blue);
-
-             printf("%i: offavg=red\n", offavg_r);
-
-
-
-            temp[i][j].rgbtRed = offavg_r;
-            temp[i][j].rgbtGreen = offavg_g;
-            temp[i][j].rgbtBlue = offavg_b;
-
-          }
-
-
-    }
-
-   for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            image[i][j] = temp[i][j];
         }
-    }
+
+        for (int i = 0; i < height; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                image[i][j] = temp[i][j];
+            }
+        }
     }
 }
 
 
 
 
- //if(i == 0 && j == 0)
+//if(i == 0 && j == 0)
 //             {
 //             offx=(image[i][j+1].rgbtRed + image [i-1][j].rgbtRed + image[i-1][j+1].rgbtRed)/3;
 //             offy = (image[i][j+1].rgbtGreen + image [i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen)/3;
