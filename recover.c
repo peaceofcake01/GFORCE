@@ -3,32 +3,37 @@
 
 int main(int argc, char *argv[])
 {
-if (argc != 2)
+    //check that you are receiving two argument
+    if (argc != 2)
     {
         printf("Usage: ./recover image\n");
         return 1;
     }
 
+    //open file and define the image
     FILE *f = fopen(argv[1], "r");
     FILE *img;
 
     int counter = -1;
-
-    if(f == NULL)
+    //if receive an unopenable file then quit
+    if (f == NULL)
     {
         printf("Need a Readable File\n");
         return 1;
     }
+    //define name of the jpegs
     char x[8];
-//Check that *f
+    //Check that *f
     unsigned char buffer[512];
-    while(fread(buffer, 1, 512, f) == 512)
-    {
 
+    //create a forever loop that checks that buffer is 512 long
+    while (fread(buffer, 1, 512, f) == 512)
+    {
+        //Buffer must start with this to get started
         if (buffer[0] == 0xff  && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-
-            if(counter != -1)
+            //if not the first one close the image and create a new file that can be written in
+            if (counter != -1)
             {
                 fclose(img);
             }
@@ -36,7 +41,8 @@ if (argc != 2)
             sprintf(x, "%03i.jpg", counter);
             img = fopen(x, "w+");
         }
-        if (counter!=-1)
+        //if it is not the first one then start writing it when you hit the first buffer
+        if (counter != -1)
         {
             fwrite(buffer, 1, 512, img);
         }
@@ -47,36 +53,3 @@ if (argc != 2)
 }
 
 
-    //If Represents a JPEG File- write 000.jpg and write
-
-        //        Create JPG with name ###.jpg starting from 000.jpg
-        //how to get filename to be going up on JPEG
-
-
-
-        //Write first file
-
-        //fwrite(pointer to bytes written,512, number ,File *f= JPEG)
-
-        //if second or third JPEG- close the
-
-
-//         else if ((buffer[0] != 0xff || buffer[1] != oxd8 && buffer[2] != 0xff && (buffer[3]& 0xf0) != 0xe0)
-
-//         {
-
-
-//         }
-//     }
-//     }while fread ( ) >0
-// }
-
-//   fread(data, size, number, inptr-file you will read from)
-//     //want to read from memory file
-
-//     fread(buffer, 512 BYTE, number, FILE *f = fopen(argv[1], "r"))
-// //repeat somr process until you reach the end of the card
-
-//  typedef unsigned char BYTE;
-
-//     fread(y, 1, 512, FILE *f = fopen(argv[1], "r"))
