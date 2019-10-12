@@ -70,16 +70,14 @@ bool load(const char *dictionary)
 
     //Take new node and put it inside hash table
      node *list = NULL;
-     FILE *f = fopen(dictionary, "r");
-     while (fscanf(f, "%s", buffer) != EOF)
+     FILE *DICT = fopen(dictionary, "r");
+     while (fscanf(DICT, "%s", buffer) != EOF)
      {
-        if (f == NULL)
+        if (DICT == NULL)
         {
             printf("Need a Readable File\n");
             return false;
         }
-
-
 
     //Hash the word - give it hash key-  0,1 , 2,
     //table
@@ -98,10 +96,10 @@ bool load(const char *dictionary)
 
         counter++;
 
-
         }
-        return true;
-        fclose(f);
+
+        fclose(DICT);
+         return true;
 }
 
     //first argument is pointer, want to read line by line ,fscanf(pointer, percent s, buffer)
@@ -130,7 +128,7 @@ bool unload(void)
     node *pt;
     for(int n=0; n<26; n++)
     {
-       pt= table[n];
+       pt = table[n];
        while(pt != NULL)
        {
         node *temp = pt;
