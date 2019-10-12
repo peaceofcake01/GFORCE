@@ -101,6 +101,7 @@ bool load(const char *dictionary)
 
         }
         return true;
+        fclose(f);
 }
 
     //first argument is pointer, want to read line by line ,fscanf(pointer, percent s, buffer)
