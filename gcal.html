@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Google Calendar</title>
+        <script>
+            function gc_madlib()
+            {
+                let fillin1 = document.querySelector('#textgc1').value;
+                let fillin2 = document.querySelector('#textgc2').value;
+                let fillin3 = document.querySelector('#textgc3').value;
+                let fillin4 = document.querySelector('#textgc4').value;
+                let fillin5 = document.querySelector('#textgc5').value;
+                let fillin6 = document.querySelector('#textgc6').value;
+                let fillin7 = document.querySelector('#intgc1').value;
+                let fillin8 = document.querySelector('#intgc2').value;
+                let fillin9 = document.querySelector('#textgc7').value;
+                let fillin10 = document.querySelector('#textgc8').value;
+
+                document.querySelector('#result').innerHTML = 'You are walking through the ' + fillin1 +
+                ' where you see your great friend ' + fillin2 +
+                '. You realized you have not seen each other in a while so you ask them if they want to get some' + fillin3 +
+                '! They respond with a resounding yes and you both pull out your Google Calendars! You ' + fillin4 +
+                ' at the fact that both of you guys just did this as your friend says " ' + fillin5 +
+                '." You respond with a ' + fillin6+
+                '. Your friend asks if you are free on the 12th of November. However you are only available on the' + fillin7 +
+                'th of Novemember! You offered that day as an alternative and they say that they are not free, the next time they are free is the ' + fillin8+
+                'th of November! Luckily this works for you and you say: "' + fillin9 +
+                '." After you schedule the hang out you two' + fillin10 + 'and look forward to meet up in a few days!'
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 class= "title">Google Calendar</h1>
+        <h3>Fill in each element of the Mad Lib below!</h3>
+        <h4>When finished, press Submit to see the story you have created!</h4>
+        <div class="fillin">
+            <form onsubmit = "gc_madlib(); return false;">
+                <div>
+                    You are walking through the
+                    <input type="text" placeholder="location" id= "textgc1">
+                    where you see your great friend
+                    <input type="text" placeholder="Name" id= "textgc2">
+                    . You realized you have not seen each other in a while so you ask them if they want to get some
+                    <input type="text" placeholder="Hangout Thing" id= "textgc3">
+                    ! They respond with a resounding yes and you both pull out your Google Calendars! You
+                    <input type="text" placeholder="Action" id= "textgc4">
+                    at the fact that both of you guys just did this as your friend says "
+                    <input type="text" placeholder="Friend Says" id= "textgc5">
+                    ." You respond with a
+                    <input type="text" placeholder ="facial expression" id= "textgc6">
+                    . Your friend asks if you are free on the 12th of November. However you are only available on the
+                    <input type="number" placeholder="Day" id= "intgc1">
+                    th of Novemember! You offered that day as an alternative and they say that they are not free, the next time they are free is the
+                    <input type="number" placeholder="Day 2" id= "intgc2">
+                    th of November! Luckily this works for you and you say "
+                    <input placeholder="Your statement" type ="text" id= "textgc7">
+                    ." After you schedule the hang out you two
+                    <input placeholder="Action" type= "text" id= "textgc8">
+                    and look forward to meet up in a few days!
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div id = "result">
+            Mad Lib Will Show Up Here!
+        </div>
+        <footer>
+            <table class="footer">
+                <tr>
+                    <td class="footercol">
+                        <a class = "Home" href="index.html">Home</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="HarYale.html">Harvard vs. Yale</a>
+                    </td>
+                     <td class="footercol">
+                        <a href="cs50lecture.html">CS50 Lecture</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="Housingday.html">Housing Day</a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

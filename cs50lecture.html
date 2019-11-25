@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>CS 50 Lecture</title>
+        <script>
+           function cs_madlib()
+            {
+                let fillin1 = document.querySelector('#textcs1').value;
+                let fillin2 = document.querySelector('#textcs2').value;
+                let fillin3 = document.querySelector('#textcs3').value;
+                let fillin4 = document.querySelector('#textcs4').value;
+                let fillin5 = document.querySelector('#textcs5').value;
+                let fillin6 = document.querySelector('#textcs6').value;
+                let fillin7 = document.querySelector('#intcs1').value;
+                let fillin8 = document.querySelector('#intcs2').value;
+                let fillin9 = document.querySelector('#textcs7').value;
+                let fillin10 = document.querySelector('#textcs8').value;
+
+                document.querySelector('#result').innerHTML = 'On this ' + fillin1 +
+                ', autumn day, everyone is piling in for this ' + fillin2 +
+                ' CS 50 lecture that will cover ' + fillin3 +
+                '. The students in the class are feeling ' + fillin4 +
+                ', David Malan is feeling ' + fillin5 +
+                ', and as the lights dim you could feel the excitement in the air as a student yells from the crowd, "' + fillin6+
+                ' " After about ' + fillin7 +
+                ' minutes of lecture or rather ' + fillin8+
+                ' minutes in binary, it was time for a snack which today would be ' + fillin9 +
+                '. After the students enjoyed this tasty snack they headed back in and watched the rest of the lecture which ended with the famous last words: ' + fillin10
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 class= "title">CS50 Lecture</h1>
+        <h3>Fill in each element of the Mad Lib below!</h3>
+        <h4>When finished, press Submit to see the story you have created!</h4>
+        <div class="fillin">
+            <form onsubmit = "cs_madlib(); return false;">
+                <div>
+                    On this
+                    <input type="text" placeholder="Weather" id= "textcs1">
+                    autumn day, everyone is pilling in for this
+                    <input type="text" placeholder="Adjective" id= "textcs2">
+                    CS 50 lecture that will cover
+                    <input type="text" placeholder="Noun" id= "textcs3">
+                    . The students in the class are feeling
+                    <input type="text" placeholder="Descriptive Word" id= "textcs4">
+                    , David Malan is feeling
+                    <input type="text" placeholder="Descriptive Word" id= "textcs5">
+                    , and as the lights dim you could feel the excitement in the air as a student yells from the crowd:
+                    <input type="text" placeholder ="Student Comment" id= "textcs6">
+                    . After about
+                    <input type="number" placeholder="Minutes" id= "intcs1">
+                    minutes of lecture or rather
+                    <input type="number" placeholder="Minutes in Binary" id= "intcs2">
+                    minutes in binary, it was time for a snack which today would be
+                    <input placeholder="Noun" type ="text" id= "textcs7">
+                    . After the students enjoyed this tasty snack they headed back in and watched
+                    the rest of the lecture which ended with the famous last words:
+                    <input type="text" placeholder="Last Words" maxlength="20" id= "textcs8">
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div id = "result">
+            Mad Lib Will Show Up Here!
+        </div>
+        <footer>
+            <table class="footer">
+                <tr>
+                    <td class="footercol">
+                        <a class = "Home" href="index.html">Home</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="HarYale.html">Harvard vs. Yale</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="Housingday.html">Housing Day</a>
+                    </td>
+                    <td class="footercol">
+                        <a class = "gcalfoot" href="gcal.html">Google Calendar</a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

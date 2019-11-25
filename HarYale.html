@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Harvard vs. Yale</title>
+        <script>
+            function hy_madlib()
+            {
+                let fillin1 = document.querySelector('#texthy1').value;
+                let fillin2 = document.querySelector('#texthy2').value;
+                let fillin3 = document.querySelector('#texthy3').value;
+                let fillin4 = document.querySelector('#texthy4').value;
+                let fillin5 = document.querySelector('#texthy5').value;
+                let fillin6 = document.querySelector('#texthy6').value;
+                let fillin7 = document.querySelector('#inthy1').value;
+                let fillin8 = document.querySelector('#inthy2').value;
+                let fillin9 = document.querySelector('#texthy7').value;
+                let fillin10 = document.querySelector('#texthy8').value;
+
+                document.querySelector('#result').innerHTML = 'What a ' + fillin1 +
+                ' day for the biggest football game of the year! Harvard vs. Yale! The crowd was ' + fillin2 +
+                ' for what would be the 136th battle between these two teams. The cheerleaders were throwing ' + fillin3 +
+                ' into the crowd, fans were ' + fillin4 +
+                ' and ' + fillin5 +
+                ' was in the weather forecast. But ultimately, ' + fillin6+
+                ' won, by a score of ' + fillin7 +
+                ' to ' + fillin8+
+                ' bringing immortality to their team as the fans stormed the field! The' + fillin9 +
+                ' was interviewed by the reporter and he proceeded to say a few simple words during the interview, they were:' + fillin10
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 class= "title">Harvard vs. Yale</h1>
+        <h3>Fill in each element of the Mad Lib below!</h3>
+        <h4>When finished, press Submit to see the story you have created!</h4>
+        <div class="fillin">
+            <form onsubmit = "hy_madlib(); return false;">
+                <div>
+                    What a
+                    <input type="text" placeholder="Adjective" id= "texthy1">
+                    day for the biggest football game of the year! Harvard vs. Yale! The crowd was
+                    <input type="text" placeholder="Adjective" id= "texthy2">
+                    for what would be the 136th battle between these two teams.
+                    The cheerleaders were throwing
+                    <input type="text" placeholder="Noun" id= "texthy3">
+                    into the crowd, fans were
+                    <input type="text" placeholder="Activity" id= "texthy4">
+                    , and
+                    <input type="text" placeholder="Noun" id= "texthy5">
+                    was in the weather forecast.
+                    But ultimately,
+                    <input type="text" placeholder ="Harvard/Yale" id= "texthy6">
+                    won, by a score of
+                    <input type="number" placeholder="Harvard Score" id= "inthy1">
+                    to
+                    <input type="number" placeholder="Yale Score" id= "inthy2">
+                    bringing immortality to their team as the fans stormed the field! The
+                    <input placeholder="person interviewed" type ="text" id= "texthy7">
+                    was interviewed by the reporter and he proceeded to say
+                    a few simple words during the interview, they were:
+                    <input placeholder="Three Words" maxlength="20" id= "texthy8">
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div id = "result">
+            Mad Lib Will Show Up Here!
+        </div>
+        <footer>
+            <table class="footer">
+                <tr>
+                    <td class="footercol">
+                        <a class = "Home" href="index.html">Home</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="cs50lecture.html">CS50 Lecture</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="Housingday.html">Housing Day</a>
+                    </td>
+                    <td class="footercol">
+                        <a class = "gcalfoot" href="gcal.html">Google Calendar</a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

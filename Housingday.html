@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Housing Day</title>
+        <script>
+            function hy_madlib()
+            {
+                let fillin1 = document.querySelector('#texthd1').value;
+                let fillin2 = document.querySelector('#texthd2').value;
+                let fillin3 = document.querySelector('#texthd3').value;
+                let fillin4 = document.querySelector('#texthd4').value;
+                let fillin5 = document.querySelector('#texthd5').value;
+                let fillin6 = document.querySelector('#texthd6').value;
+                let fillin7 = document.querySelector('#texthd11').value;
+                let fillin8 = document.querySelector('#texthd12').value;
+                let fillin9 = document.querySelector('#texthd7').value;
+                let fillin10 = document.querySelector('#texthd8').value;
+
+                document.querySelector('#result').innerHTML = 'What a ' + fillin1 +
+                ' day for one of the oldest traditions in Harvard history! Housing Day! The freshman were ' + fillin2 +
+                ' for what would be the day that they will find out what upperclassmen house they will be a part of! You are sitting in your freshman dorm of ' + fillin3 +
+                ' as you wait. Then suddenly you hear screaming as the upperclassmen students were ' + fillin4 +
+                ' and you could feel the energy in the air as both ' + fillin5 +
+                ' and ' + fillin6+
+                ' enter your dorm and run up the stairs! You hear chants and then your blockmate says: "' + fillin7 +
+                '," and you respond with a ' + fillin8+
+                '! Finally you hear a knock on your door and it turns out that for the next three years you will be in ' + fillin9 +
+                ' They storm your room and yell excitedly: ' + fillin10
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 class= "title">Housing Day</h1>
+        <h3>Fill in each element of the Mad Lib below!</h3>
+        <h4>When finished, press Submit to see the story you have created!</h4>
+        <div class="fillin">
+            <form onsubmit = "hy_madlib(); return false;">
+                <div>
+                What a
+                <input type="text" placeholder="Adjective" id= "texthd1">
+                day for one of the oldest traditions in Harvard history! Housing Day! The freshman were
+                <input type="text" placeholder="Adjective" id= "texthd2">
+                for what would be the day that they will find out what upperclassmen house they will be a part of!
+                You are sitting in your freshman dorm of
+                <input type="text" placeholder="Noun" id= "texthd3">
+                as you wait. Then suddenly you hear screaming as the upperclassmen students were
+                <input type="text" placeholder="Activity" id= "texthd4">
+                , and you could feel the energy in the air as both
+                <input type="text" placeholder="Upperclassmen House 1" id= "texthd5">
+                and
+                <input type="text" placeholder ="Upperclassment House 2" id= "texthd6">
+                enter your dorm and run up the stairs! You hear chants and then your blockmate says:
+                <input type="text" placeholder="Blockmate Says" id= "texthd11">
+                and you respond with a
+                <input type="text" placeholder="Facial Expression" id= "texthd12">
+                ! Finally you hear a knock on your door and it turns out that for the next three years you will be in:
+                <input placeholder="Your Upperclassmen House" type ="text" id= "texthd7">
+                . They storm your room and yell excitedly:
+                <input placeholder="Three Words" maxlength="30" id= "texthd8">
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div id = "result">
+            Mad Lib Will Show Up Here!
+        </div>
+        <footer>
+            <table class="footer">
+                <tr>
+                    <td class="footercol">
+                        <a class = "Home" href="index.html">Home</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="HarYale.html">Harvard vs. Yale</a>
+                    </td>
+                    <td class="footercol">
+                        <a href="cs50lecture.html">CS50 Lecture</a>
+                    </td>
+                    <td class="footercol">
+                        <a class = "gcalfoot" href="gcal.html">Google Calendar</a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>
