@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class="table table striped">
+    <thead>
+        <tr>
+            <td>Symbol</td>
+            <td>Name</td>
+            <td>Shares</td>
+            <td>Cost</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row['symbol'] }}</td>
+            <td>{{ row['company'] }}</td>
+            <td>{{ row['SUM(shares)'] }}</td>
+            <td>${{ row['price'] }}</td>
+            <td>${{ row['total'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="4">
+                CASH
+            </td>
+            <td>
+                ${{ totalcash }}
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <td colspan="4">
+        </td>
+        <td>
+            ${{ officialdelta }}
+        </td>
+    </tfoot>
+</table>
+
+{% endblock %}
