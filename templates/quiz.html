@@ -1,0 +1,605 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Giving Quiz
+{% endblock %}
+
+{% block main %}
+<h1 class= hquiz>Giving Quiz</h1>
+<h3>The Quiz Consists of 24 Questions and will help us make a Recommendation as to what area of Giving you should work on!</h3>
+<h2 class= h2quiz>Let's Begin!</h2>
+<hr>
+<form action="/quiz" method="post">
+  <label class="statement">1. If someone has wronged you, you find it easy to excuse that person's actions even if they have not yet apologized to you.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="forgive1" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive1" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive1" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+    <hr>
+    <label class="statement">2. I count my blessings for what I have in this world.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thankgive1" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive1" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive1" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+  <label class="statement">3. I find it difficult to control my emotions.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thoughtgive1" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive1" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive1" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+  <label class="statement">4. I consider myself to be someone who embraces change.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="trygive1" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive1" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive1" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">5. I stress myself out just by thinking about an event that will happen far in the future and it casues me discomfort.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="restgive1" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive1" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive1" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">6.
+I feel as though I have a solid support system in which I play an important role providing support and care to others while also receiving love from the system.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="caregive1" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive1" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive1" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">7.
+I am a patient person that takes in a situation and then makes a rational decision after considering all the information.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thoughtgive2" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive2" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive2" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">8. I do not only believe in the statement: "Give it a Shot!", but I think that a
+better attitude is to shoot for the stars.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="trygive2" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive2" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive2" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">9. I struggle with communicating to others that I appreciate having them in my life.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thankgive2" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive2" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive2" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+    <hr>
+<label class="statement">10. I find my relationships to be unfulfilling and I do not feel as though I am not a participant in a good supportive group.</label>
+  <ul class='likert'>
+      <li>
+        <input type="radio" name="caregive2" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive2" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive2" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">11. I consider myself to be an overthinker.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="restgive2" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive2" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive2" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+    <label class="statement">12. I feel as though I provide positive support and love to other people in my life.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="caregive3" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive3" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive3" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+    <label class="statement">13. Think about someone who has hurt you. Do you find it difficult to act warmly towards him/her.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="forgive2" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive2" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive2" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+    <hr>
+    <label class="statement">14. Think about someone who has hurt you. Do you want him/her to get what he/she deserves.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="forgive3" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive3" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive3" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+<hr>
+<label class="statement">15. I consider myself to be someone that makes rash decisions and will act reactively without considering all options.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thoughtgive3" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive3" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive3" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">16. I remind myself how fortunate I am to have the privileges and opportunities I have encountered in life.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thankgive3" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive3" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive3" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">17. If something is not worth my time or effort, I find it easy to move on
+from the situation and not spend much time obsessing over the matter.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="restgive3" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive3" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive3" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+<label class="statement">18. I try to push myself out of my comfort zone and experience new things.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="trygive3" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive3" value="neutral"required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive3" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+ <label class="statement">19. I consider myself to be a forgiving person.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="forgive4" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive4" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="forgive4" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+
+ <label class="statement">20. I consider myself to be a supportive person that cares for those around me and tries to leave a
+ positive mark on the world.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="caregive4" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive4" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="caregive4" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+
+   <label class="statement">21. I consider myself to be someone who is patient and will take a moment to make a decision instead of
+   rushing into something haphazardly.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thoughtgive4" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive4" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thoughtgive4" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+
+   <label class="statement">22. I consider myself to be a grateful person who recognizes and mindfully points out how I am blessed.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="thankgive4" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive4" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="thankgive4" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+
+   <label class="statement">23. I consider myself to be someone who likes to give things a shot. I search and take a variety of opportunities
+   and love to experience different things!</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="trygive4" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive4" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="trygive4" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+  <hr>
+
+   <label class="statement">24. I consider myself to be a person that gives themselves a break from his/her thoughts often.
+   I don't spend all day stuck inside my own head and don't obsess over the little things.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="restgive4" value="strong_agree">
+        <label>Strongly Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive4" value="neutral" required>
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="restgive4" value="strong_disagree">
+        <label>Strongly Disagree</label>
+      </li>
+    </ul>
+
+    <button class="btn btn-primary" type="submit">Get Results</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Forgive Choice
+{% endblock %}
+
+{% block main %}
+    <div class="container1">
+        <h2 class= "h2rec">
+            You have selected to work on:
+        </h2>
+        <img id = "forgivegoal" src="{{url_for('static', filename='forgiveexp.jpg')}}" />
+        <h1>Forgiveness</h1>
+    </div>
+
+    <h3>Press next to get started with the challenges!</h3>
+
+    <form action="/challenge" method="get">
+        <button class="next">Let's Do It!</button>
+    </form>
+{% endblock %}

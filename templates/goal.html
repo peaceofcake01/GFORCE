@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Goal
+{% endblock %}
+
+{% block main %}
+
+<h1 class= "goalh1">Our Goal</h1>
+
+<h4>Through the use of Mindfulness and the 6 Pillars of Giving, we want to create a movement of change that will help improve
+the well-being and satisfaction of the lives of G-Force Users. Our Diagnostic Giving Quiz will recommend a pillar
+of giving to focus on and then you will follow a progressive path of challenges, a journey that of self-growth that
+will leave you more fulfilled and happy!</h4>
+
+<h2 class= goalh2>The Six Pillars</h2>
+
+<table class="pillartable">
+    <tr>
+        <td class="pillartablecol">
+            <a href="#forgivegoal" class="list">
+                Forgiveness
+            </a>
+        </td>
+        <td class="pillartablecol">
+            <a href="#thankgoal" class="list">
+                Giving Thanks
+            </a>
+        </td>
+        <td class="pillartablecol">
+            <a href="#trygoal" class="list">
+                Give it a Try
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="pillartablecol">
+            <a href="#thoughtgoal" class="list">
+                Give it a Thought
+            </a>
+        </td>
+        <td class="pillartablecol">
+            <a href="#restgoal" class="list">
+                Give it a Rest
+            </a>
+        </td>
+        <td class="pillartablecol">
+            <a href="#caregoal" class="list">
+                Care Giving
+                </a>
+            </td>
+        </tr>
+</table>
+
+<h3 class=goalexplain> Below are the in-depth explanations about our
+Six Pillars of Giving and the reasoning behind their vital importance in a person's life. </h3>
+<hr>
+<table class="goalstable">
+    <tr class="rowgoal">
+        <a name="forgivegoal"></a>
+        <td class= "colgoal">
+            <div class="container">
+                <img id = "forgivegoal" src="{{url_for('static', filename='forgiveexp.jpg')}}" />
+                <div class="text-block">
+                <h4>Forgiveness</h4>
+              </div>
+            </div>
+        <td class= "colgoal">
+            <div class="explanataion">
+           <h1> Forgiveness </h1>
+            <h5>
+            When we hold on to hurt, pain, resentment, and anger it harms us far more than it harms the offender. It leads to negative thoughts that manifest
+            and keep us in the past. Forgiveness is for our own growth and happiness. It frees us to live in the present.</h5>
+            </div>
+         </td>
+    </tr>
+    <tr class="rowgoal">
+         <a name="thankgoal"></a>
+            <td>
+              <div class="explanataion">
+               <h1> Giving Thanks </h1>
+
+            <h5> Gratitude helps people feel more positive emotions, relish good experiences, improve their health, deal with adversity, and build strong relationships.
+            Furthermore, research in Positive Psychology has found that people who give thanks are found to be substantially happier and feel more fulfilled!
+            </h5>
+            </div>
+
+            </div>
+        <td>
+          <div class="container">
+
+                <img id = "thanksgoal" src="{{url_for('static', filename='gratitudeexp.jpg')}}" />
+                <div class="text-block">
+
+                <h4>Giving Thanks</h4>
+              </div>
+         </td>
+    </tr>
+    <tr class="rowgoal">
+         <a name="trygoal"></a>
+        <td class= "colgoal">
+            <div class="container">
+                <img id = "trygoal" src="{{url_for('static', filename='giveitatryexp.jpg')}}" />
+                <div class="text-block">
+                <h4>Give it a Try</h4>
+              </div>
+            </div>
+        <td class= "colgoal">
+            <div class="explanataion">
+           <h1> Give it a Try </h1>
+            <h5>It is very beneficial to experience new things by pushing yourself out of your comfort zone to embrace change.
+            By taking on different opportunities to grow, we have the ability to make everyday our masterpiece, improving our emotional and physical well being along with our life-satisfaction
+            </h5>
+            </div>
+         </td>
+    </tr>
+    <tr class="rowgoal">
+         <a name="thoughtgoal"></a>
+        <td>
+              <div class="explanataion">
+           <h1> Give it a Thought </h1>
+            <h5>Patience is very beneficial. By giving things a thought you are not being reactive and letting your emotions but rather slowing down to understand the situation in the most empathetic and
+            reflective way possible which improves your decision-making and happiness with your future situations.
+            </h5>
+            </div>
+            </div>
+        <td>
+          <div class="container">
+                <img id = "thoughtgoal" src="{{url_for('static', filename='giveitathoughtexp.jpg')}}" />
+                <div class="text-block">
+                <h4>Give it a Thought</h4>
+              </div>
+         </td>
+    </tr>
+
+     <tr class="rowgoal">
+         <a name="restgoal"></a>
+        <td class= "colgoal">
+            <div class="container">
+                <img id = "restgoal" src="{{url_for('static', filename='giveitarestexp.jpg')}}" />
+                <div class="text-block">
+                <h4>Give it a Rest</h4>
+              </div>
+            </div>
+        <td class=colgoal>
+            <div class="explanataion">
+           <h1> Give it a Rest </h1>
+           <h5>
+               Giving things a rest means to stop overthinking. By taking a moment to rest and not obsess over the stressors of life you are able to detach yourself from the elements of life that bog
+               you down and live in a more deliberate and self-actualized way.
+           </h5>
+            </div>
+         </td>
+    </tr>
+    <tr class="rowgoal">
+
+        <td>
+            <a name="caregoal"></a>
+              <div class="explanataion">
+           <h1> Care Giving </h1>
+           <h5>
+               Care Giving is when people provide support for those around them, whether it be with loved ones, friends, or general acquantiences, there are many ways to care for others.
+                It has been found that people with strong support systems are more successful, healthy, and report better emotional well-beings!
+            </h5>
+            </div>
+            </div>
+        <td>
+          <div class="container">
+                <img id = "givegoal" src="{{url_for('static', filename='caregiveexp.jpg')}}" />
+                <div class="text-block">
+                <h4>Care Giving</h4>
+              </div>
+         </td>
+    </tr>
+
+
+
+</table>
+
+        <footer>
+            <table class="footer">
+                <tr>
+                    <td class="footercol">
+                        <a class = "TopPage" href='#top'>Top of Page</a>
+                    </td>
+                </tr>
+
+            </table>
+        </footer>
+
+
+
+
+{% endblock %}

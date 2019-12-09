@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recommend Forgive
+{% endblock %}
+
+{% block main %}
+   <div class="container1">
+    <h2 class= "h2rec">
+        We recommend that you start with:
+    </h2>
+    <img id = "forgivegoal" src="{{url_for('static', filename='forgiveexp.jpg')}}" />
+    <h1>Forgiveness</h1>
+    </div>
+    <div class="minicontainer">
+    <h2 class= "h2rec">Your strongest pillar is:</h2>
+    <h1>{{ bestone }}</h1>
+    </div>
+
+    <h3>Press next to get started with the challenges!</h3>
+
+    <form action="/challenge" method="get">
+    <button class="next">Let's Do It!</button>
+</form>
+{% endblock %}

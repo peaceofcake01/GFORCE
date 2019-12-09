@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start Challenge
+{% endblock %}
+
+{% block main %}
+   <div class="container1">
+    <h2 class= "h2rec">
+        In order to start working on the challenges you must accept your recommendation from the Giving Quiz!
+    </h2>
+
+    <h2>Press Below to go and accept your recommendation!</h2>
+
+    <form action="/quiz" method="get">
+    <button class="next">Let's Do It!</button>
+</form>
+{% endblock %}

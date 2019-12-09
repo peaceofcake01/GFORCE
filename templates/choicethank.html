@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Choice Thanks
+{% endblock %}
+
+{% block main %}
+    <div class="container1">
+        <h2 class= "h2rec">
+            You have selected to work on:
+        </h2>
+        <img id = "thankgoal" src="{{url_for('static', filename='gratitudeexp.jpg')}}" />
+        <h1>Thanks Giving</h1>
+    </div>
+
+    <h3>Press next to get started with the challenges!</h3>
+
+    <form action="/challenge" method="get">
+        <button class="next">Let's Do It!</button>
+    </form>
+{% endblock %}
