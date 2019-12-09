@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recommend Care
+{% endblock %}
+
+{% block main %}
+   <div class="container1">
+    <h2 class= "h2rec">
+        We recommend that you start with:
+    </h2>
+    <img id = "caregoal" src="{{url_for('static', filename='caregiveexp.jpg')}}" />
+    <h1>Care Giving</h1>
+    </div>
+    <div class="minicontainer">
+    <h2 class= "h2rec">Your strongest pillar was:</h2>
+    <h1>{{ bestone }}</h1>
+    </div>
+
+    <h3>Press below to get started with the challenges!</h3>
+
+    <form action="/challenge" method="get">
+    <button class="next">Let's Do It!</button>
+</form>
+{% endblock %}

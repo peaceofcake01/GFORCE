@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Care Choice
+{% endblock %}
+
+{% block main %}
+    <div class="container1">
+        <h2 class= "h2rec">
+            You have selected to work on:
+        </h2>
+        <img id = "caregoal" src="{{url_for('static', filename='caregiveexp.jpg')}}" />
+        <h1>Care Giving</h1>
+    </div>
+    <h3>Press below to get started with the challenges!</h3>
+    <form action="/challenge" method="get">
+        <button class="next">Let's Do It!</button>
+    </form>
+{% endblock %}

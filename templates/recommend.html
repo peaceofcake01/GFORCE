@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Next Challenge Set
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Congrats on completing your Challenge set!
+    </h1>
+
+    <h2>
+        For your next challenge you can choose the area of your choice!
+        We recommend working on areas you believe you need the most work on, but it is your choice!
+    </h2>
+    <h2>You can even redo a challenge set that you have done in the past because you can always strengthen the pillars!</h2>
+
+    <div class= "container1">
+        <form action="/recommend" method="post">
+  <label class="statement">Select your next pillar!</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="choice" value="forgive">
+        <label>Forgiving</label>
+      </li>
+      <li>
+        <input type="radio" name="choice" value="thank">
+        <label>Thank Giving</label>
+      </li>
+      <li>
+        <input type="radio" name="choice" value="thought"required>
+        <label>Give it a Thought</label>
+      </li>
+      <hr>
+      <li>
+        <input type="radio" name="choice" value="rest">
+        <label>Give it a Rest</label>
+      </li>
+      <li>
+        <input type="radio" name="choice" value="try">
+        <label>Give it a Try</label>
+      </li>
+       <li>
+        <input type="radio" name="choice" value="care">
+        <label>Care Giving</label>
+      </li>
+    </ul>
+    </div>
+    <div class="container1">
+    <h2 class= "h2rec">
+        Quiz Results:
+    </h2>
+    <h4 class= listgood>Strongest</h4>
+    <h1 class=rating>1. {{ bestone }} </h1>
+    <h1 class=rating>2. {{ secondbestone }}</h1>
+    <h1 class=rating>3. {{ thirdbestone }} </h1>
+    <h1 class=rating>4. {{ fourthbestone }}</h1>
+    <h1 class=rating>5. {{ fifthbestone }} </h1>
+    <h1 class=rating>6. {{ worstone }}</h1>
+
+    <h4 class=listgood>Weakest</h4>
+    </div>
+
+
+
+
+<h3>Press below to get started with the challenges!</h3>
+    <form action="/challenge" method="get">
+    <button type="submit" class="next">Let's Do It!</button></h2>
+
+{% endblock %}

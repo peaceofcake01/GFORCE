@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz Results
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Here are the results from your Giving Quiz
+    </h1>
+
+    <div class="container1">
+    <h2 class= "h2rec1">
+    </h2>
+      <h4 class= listgood>Strongest</h4>
+    <h1>1. {{ bestone }} </h1>
+    <h1>2. {{ secondbestone }}</h1>
+    <h1>3. {{ thirdbestone }} </h1>
+    <h1>4. {{ fourthbestone }}</h1>
+    <h1>5. {{ fifthbestone }} </h1>
+    <h1>6. {{ worstone }}</h1>
+
+    <h4 class=listgood>Weakest</h4>
+    </div>
+
+
+
+
+<h3>To continue with challenges press below!</h3>
+    <form action="/challenge" method="get">
+    <button type="submit" class="next">Let's Do It!</button></h2>
+
+
+{% endblock %}

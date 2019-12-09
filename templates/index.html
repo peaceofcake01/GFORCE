@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<div id="tourspot1">
+<h1 class=mainh1>
+    Welcome to G-Force
+</h1>
+<h2>
+    We believe in the power of giving of all forms on the journey to a happy and fulfilling life!
+</h2>
+<h3>
+    By strengthening each individual pillar of giving, you will take steps toward improving your well-being and increasing life-satisfaction!
+</h3>
+<img id = "pillars" src="{{url_for('static', filename='pillarsofficial.jpg')}}" />
+
+<h3>
+Press next to get started with our Giving Quiz that will help us recommend which pillar of giving you should focus on to start off!
+</h3>
+<form action="/quiz" method="get">
+    <button class="next">Get Started!</button>
+</form>
+</div>
+
+{% endblock %}
